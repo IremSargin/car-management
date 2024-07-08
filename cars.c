@@ -16,6 +16,7 @@ void addingCar(Car **carList, int *count);
 void deleteCar(Car **carList, int *count);
 void askCar(Car **carList, int *count);
 void changeInfo(Car **carList, int *count);
+void giveMe(Car **carList,int i);
 
 int main() {
     int option;
@@ -159,13 +160,7 @@ void askCar(Car **carList, int *count) {
 
         for (int i = 0; i < *count; i++) {
             if (strcmp(askIndex, (*carList)[i].brand) == 0) {
-                printf("Brand: %s\n", (*carList)[i].brand);
-                printf("Model: %s\n", (*carList)[i].model);
-                printf("Year: %d\n", (*carList)[i].year);
-                printf("Color: %s\n", (*carList)[i].color);
-                printf("Km: %f\n", (*carList)[i].km);
-                printf("SeriNo: %d\n", (*carList)[i].seriNo);
-                printf("Price: %d\n\n", (*carList)[i].price);
+                giveMe(carList, i);
             }
         }
     } else if (strcmp(changePart, "model") == 0) {
@@ -175,13 +170,7 @@ void askCar(Car **carList, int *count) {
 
         for (int i = 0; i < *count; i++) {
             if (strcmp(askIndex, (*carList)[i].model) == 0) {
-                printf("Brand: %s\n", (*carList)[i].brand);
-                printf("Model: %s\n", (*carList)[i].model);
-                printf("Year: %d\n", (*carList)[i].year);
-                printf("Color: %s\n", (*carList)[i].color);
-                printf("Km: %f\n", (*carList)[i].km);
-                printf("SeriNo: %d\n", (*carList)[i].seriNo);
-                printf("Price: %d\n\n", (*carList)[i].price);
+                giveMe(carList, i);
             }
         }
     } else if (strcmp(changePart, "year") == 0) {
@@ -191,13 +180,7 @@ void askCar(Car **carList, int *count) {
 
         for (int i = 0; i < *count; i++) {
             if ((*carList)[i].year == compareYear) {
-                printf("Brand: %s\n", (*carList)[i].brand);
-                printf("Model: %s\n", (*carList)[i].model);
-                printf("Year: %d\n", (*carList)[i].year);
-                printf("Color: %s\n", (*carList)[i].color);
-                printf("Km: %f\n", (*carList)[i].km);
-                printf("SeriNo: %d\n", (*carList)[i].seriNo);
-                printf("Price: %d\n\n", (*carList)[i].price);
+                giveMe(carList, i);
             }
         }
     } else if (strcmp(changePart, "color") == 0) {
@@ -207,13 +190,7 @@ void askCar(Car **carList, int *count) {
 
         for (int i = 0; i < *count; i++) {
             if (strcmp(askIndex, (*carList)[i].color) == 0) {
-                printf("Brand: %s\n", (*carList)[i].brand);
-                printf("Model: %s\n", (*carList)[i].model);
-                printf("Year: %d\n", (*carList)[i].year);
-                printf("Color: %s\n", (*carList)[i].color);
-                printf("Km: %f\n", (*carList)[i].km);
-                printf("SeriNo: %d\n", (*carList)[i].seriNo);
-                printf("Price: %d\n\n", (*carList)[i].price);
+                giveMe(carList, i);
             }
         }
     } else if (strcmp(changePart, "km") == 0) {
@@ -223,13 +200,7 @@ void askCar(Car **carList, int *count) {
 
         for (int i = 0; i < *count; i++) {
             if (askIndex1 < (*carList)[i].km && (*carList)[i].km < askIndex2) {
-                printf("Brand: %s\n", (*carList)[i].brand);
-                printf("Model: %s\n", (*carList)[i].model);
-                printf("Year: %d\n", (*carList)[i].year);
-                printf("Color: %s\n", (*carList)[i].color);
-                printf("Km: %f\n", (*carList)[i].km);
-                printf("SeriNo: %d\n", (*carList)[i].seriNo);
-                printf("Price: %d\n\n", (*carList)[i].price);
+                giveMe(carList, i);
             }
         }
     } else if (strcmp(changePart, "seriNo") == 0) {
@@ -239,13 +210,7 @@ void askCar(Car **carList, int *count) {
 
         for (int i = 0; i < *count; i++) {
             if (askIndex1 ==  (*carList)[i].seriNo) {
-                printf("Brand: %s\n", (*carList)[i].brand);
-                printf("Model: %s\n", (*carList)[i].model);
-                printf("Year: %d\n", (*carList)[i].year);
-                printf("Color: %s\n", (*carList)[i].color);
-                printf("Km: %f\n", (*carList)[i].km);
-                printf("SeriNo: %d\n", (*carList)[i].seriNo);
-                printf("Price: %d\n\n", (*carList)[i].price);
+                giveMe(carList, i);
             }
         }
     } else if (strcmp(changePart, "price") == 0) {
@@ -255,13 +220,7 @@ void askCar(Car **carList, int *count) {
 
         for (int i = 0; i < *count; i++) {
             if (askIndex1 < (*carList)[i].price && (*carList)[i].price < askIndex2) {
-                printf("Brand: %s\n", (*carList)[i].brand);
-                printf("Model: %s\n", (*carList)[i].model);
-                printf("Year: %d\n", (*carList)[i].year);
-                printf("Color: %s\n", (*carList)[i].color);
-                printf("Km: %f\n", (*carList)[i].km);
-                printf("SeriNo: %d\n", (*carList)[i].seriNo);
-                printf("Price: %d\n\n", (*carList)[i].price);
+                giveMe(carList, i);
             }
         }
     } else {
@@ -345,4 +304,16 @@ void changeInfo (Car **carList, int *count) {
     else {
         printf("Invalid part name. No car changed.\n");
     }
+}
+
+void giveMe(Car **carList,int i){
+
+    printf("Brand: %s\n", (*carList)[i].brand);
+    printf("Model: %s\n", (*carList)[i].model);
+    printf("Year: %d\n", (*carList)[i].year);
+    printf("Color: %s\n", (*carList)[i].color);
+    printf("Km: %f\n", (*carList)[i].km);
+    printf("SeriNo: %d\n", (*carList)[i].seriNo);
+    printf("Price: %d\n\n", (*carList)[i].price);
+
 }
